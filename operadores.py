@@ -22,9 +22,9 @@ menor_que = a < b
 maior_ou_igual = a>= b
 menor_ou_igual = a <= b
 
-print igual
-print diferente
-print maior_que
-print menor_que
-print maior_ou_igual
-print menor_ou_igual
+print (igual)
+print (diferente)
+print (maior_que)
+print (menor_que)
+print (maior_ou_igual)
+print (menor_ou_igual)
