@@ -20,5 +20,5 @@ with open("dados.txt", "r") as arquivo:
     conteudo = arquivo.read()
     print(conteudo)
 #também pode utilizar a declaração with para manejar a abertura e fechamento de arquivos de maneira automática.
-#Neste caso, o arquivo é aberto utilizando a declaração with e é fechado automaticamente uma vez que se sai do bloco with, mesmo se ocorrer uma exceção.
+#Neste caso o arquivo é aberto utilizando a declaração with e é fechado automaticamente uma vez que se sai do bloco with, mesmo se ocorrer uma exceção.
 
