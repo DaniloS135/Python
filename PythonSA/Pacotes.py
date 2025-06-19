@@ -1,6 +1,6 @@
 #Para criar um pacote, criamos um diretório com o nome desejado e adicionamos um arquivo especial chamado __init__.py dentro do diretório. Este arquivo pode estar vazio ou conter código de inicialização do pacote.
 
-from meu_pacote import modulo1, modulo2
+from PythonSA.meu_pacote import modulo1, modulo2
 
 modulo1.funcao()
 modulo2.funcao()
