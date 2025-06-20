@@ -1,0 +1,19 @@
+idade = int(input("Digite a sua idade: "))
+if idade > 18:
+    print("Maior de Idade")
+elif idade >16:
+    print("Infanto juvenil")
+else:
+    print("Menor de Idade")
+    
+
+A = input("Informe um valor para a variável A: ")
+B = input("Informe um valor para a variável B:")
+
+if (A>B):
+    aux=A
+    A=B
+    B=aux
+    
+print("O valor da variável A agora é: ", A)
+print("O valor da variável B agora é: ", B)
