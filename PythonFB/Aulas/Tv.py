@@ -38,5 +38,5 @@ class ControleRemoto:
     def trocaCanal (self, canal):
         self.tv.trocaCanal(canal)
     
-    def sintonizarCanal(self,canal):
-        self.tv.sintonizarCanal(canal)
+    def sintonizaCanal(self,canal):
+        self.tv.sintonizaCanal(canal)
