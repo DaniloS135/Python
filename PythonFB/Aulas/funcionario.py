@@ -1,15 +1,15 @@
 class Funcionario:
-    def __init__(self, nome, email, horas_trabalhadas, salario):
+    def __init__(self, nome, email):
         self.nome = nome
         self.email = email
-        self.horas_trabalhadas = horas_trabalhadas
+        self.horas_trabalhadas = {}
         self.salario = {}
     
-    def exibir_dados(self):
+    '''def exibir_dados(self):
         print("\n=== Dados do Funcionário===")
         print(f"Nome: {self.nome}")
         print(f"E-mail: {self.email}")
-        print(f"Horas Trabalhadas: {self.horas_trabalhadas}")
+        print(f"Horas Trabalhadas: {self.horas_trabalhadas}")'''
         
     def cadastro_hora(self, mes, horas_trabalhadas):
         if (mes not in self.horas_trabalhadas):
@@ -30,13 +30,13 @@ class Funcionario:
     
         
         
-nome = input('Digite o seu nome:')
+'''nome = input('Digite o seu nome:')
 email = input('Digite o seu e-mail:')
 horas = input('Digite as suas horas trabalhadas:')
 
 funcionario = Funcionario(nome, email, horas)
 
-funcionario.exibir_dados()
+funcionario.exibir_dados()'''
 
         
         
