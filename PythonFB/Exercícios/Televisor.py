@@ -1,3 +1,6 @@
+#Apenas para explicar este projeto, estou tentando criar um sistema de Televisão, com umas funções, atributos, etc. Aos poucos vou adicionando opções para os usúarios utilizarem, como por exemplo, troca de canais, volume e coisas assim.
+
+
 class Televisor:
     def __init__(self, Volume=20, Canal_Atual=None, Lista_Canais=[]):
         self.Canal_Atual=Canal_Atual
