@@ -6,7 +6,7 @@ from kivy.uix.textinput import TextInput
 class MainApp(App):
     def build(self):
         self.operators= ['/', '*', '+', '-']
-        self.last_was_operator = None
+        self.last_was_operator = False
         self.last_button = None
         main_layout = BoxLayout(orientation = 'vertical')
         self.solution = TextInput(multiline=False, readonly=True, halign='right', font_size= 55)
@@ -36,3 +36,47 @@ class MainApp(App):
         main_layout.add_widget(equals_button)
         
         return main_layout
+    
+    def on_button_press(self, instance):
+        button_text = instance.text
+        current = self.solution.text
+        
+        if button_text == 'C':
+            #Clear the solution widget
+            self.solution.text = ''
+            self.last_was_operator = False
+            return
+        
+        if current and self.last_was_operator and button_text in self.operators:
+            return
+        
+        if not current and button_text in self.operators:
+            return
+        
+        self.solution.text = current + button_text
+        # atualiza o flag apenas aqui
+        
+        self.last_was_operator = button_text in self.operators
+        
+        '''else:
+            if current and (self.last_was_operator and button_text in self.operators):
+            #Don't and two operators right after each other
+            
+                return
+            elif current == '' and button_text in self.operators:
+            #First character cannot be an operator
+                return
+            else:
+                new_text = current+ button_text
+                self.solution.text = new_text
+        self.last_button = button_text
+        self.last_was_operator = self.last_button in self.operators'''
+        
+    def on_solution(self, instance):
+        text= self.solution.text
+        if text:
+            solution = str(eval(self.solution.text))
+            self.solution.text = solution
+
+if __name__ == '__main__':
+    MainApp().run()
