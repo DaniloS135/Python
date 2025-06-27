@@ -19,7 +19,7 @@ class CreateAccountWindow(Screen):
             
             sm.current='login'
         else:
-            invalidForm()
+            self.invalidForm()
     
     def login(self):
         self.reset()
@@ -30,7 +30,7 @@ class CreateAccountWindow(Screen):
         self.password.text=""
         self.namee.text=""
         
-class loginWindow(Screen):
+class LoginWindow(Screen):
     email = ObjectProperty(None)
     password = ObjectProperty(None)
     
@@ -44,7 +44,7 @@ class loginWindow(Screen):
     
     def createBtn(self):
         self.reset()
-        sm.currente = 'create'
+        sm.current = 'create'
     
     def reset(self):
         self.email.text = ''
@@ -81,8 +81,8 @@ kv = Builder.load_file('my.kv')
 sm = WindowManager()
 db = DataBase('users.txt')
 
-screens = [loginWindow(name='login'), CreateAccountWindow(name-'create'), MainWindow(name='main')]
-for Screen in screens:
+screens = [LoginWindow(name='login'), CreateAccountWindow(name='create'), MainWindow(name='main')]
+for screen in screens:
     sm.add_widget(screen)
 
 sm.current ='login'
@@ -91,9 +91,5 @@ class MyMainapp(App):
     def build(self):
         return sm
 
-if __name__ =='__main':
+if __name__ =='__main__':
     MyMainapp().run()
-    
-    
-    
-    

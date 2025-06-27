@@ -3,19 +3,24 @@ import datetime
 class DataBase:
     def __init__(self, filename):
         self.filename = filename
-        self.users = None
-        self.file = None
-        self.load()
-    
-    def load(self):
-        self.file = open(self.filename, 'r')
         self.users = {}
-        
-        for line in self.line:
-            email, password, name, created= line.strip().strip(';')
-            self.users[email] = (password, name, created)
-            
-        self.file.close()
+        self.load()
+
+    def load(self):
+        # Abre o arquivo e itera em cada linha
+        with open(self.filename, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                # separa pelos pontos-e-vírgulas
+                parts = line.split(';')
+                if len(parts) != 4:
+                    # pula linhas mal formatadas
+                    continue
+                email, password, name, created = parts
+                self.users[email] = (password, name, created)        
+
         
     def get_user(self, email):
         if email in self.users:
